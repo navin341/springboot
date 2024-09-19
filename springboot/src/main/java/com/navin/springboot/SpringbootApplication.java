@@ -3,8 +3,13 @@ package com.navin.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+@EnableJpaRepositories(basePackages = "com.navin.interfaces")
+@ComponentScan(basePackages="com.navin.service,com.navin.controller")
+@EntityScan(basePackages = "com.navin.Entity")
+@SpringBootApplication(scanBasePackages="com.navin.service,com.navin.controller,com.navin.Entity")
 public class SpringbootApplication {
 
 	public static void main(String[] args) {
@@ -13,8 +18,3 @@ public class SpringbootApplication {
 	}
 
 }
-//<dependency>
-//<groupId>org.springframework.boot</groupId>
-//<artifactId>spring-boot-starter-tomcat</artifactId>
-//<scope>provided</scope>
-//</dependency>

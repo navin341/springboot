@@ -11,7 +11,6 @@ import com.navin.interfaces.BookRepo;
 public class BookService {
 	@Autowired
 	BookRepo br;
-
 	public List<Books> getAllBooks() {
 		return (List<Books>) br.findAll();
 	}

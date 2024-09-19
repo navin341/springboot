@@ -15,7 +15,7 @@ public class Books {
 	@Column(name="author")
 	private String author;
 	public Books() {
-		// TODO Auto-generated constructor stub
+		System.out.print("control reached to books");
 	}
 	public Books(int bid, String title, String author) {
 		super();

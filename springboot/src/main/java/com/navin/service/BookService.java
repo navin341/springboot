@@ -19,4 +19,25 @@ public class BookService {
 		return br.findById(bid);
 	}
 
+	public String insert(Books b) {
+		br.save(b);
+		return "success";
+	}
+
+	public String delete(int bid) {
+		Books b=br.findById(bid);
+		br.delete(b);
+		return "deleted";
+	}
+
+	public String update(int bid,Books b) {
+		if(br.findById(bid)!=null) {
+			br.save(b);
+			return "updated";
+		}
+		else{
+			return "not Updated";
+		}
+	}
+
 }
